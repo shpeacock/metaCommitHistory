@@ -1,15 +1,16 @@
 <div class="container main">
-  <div>
-    Commit History
-  </div>
-  <div *ngFor="let commit of allCommits" class="card">
-    <div class="card-header">
-      Featured
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{commit.author.name}}</h5>
-      <p class="card-text">{{commit.commit.message}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+  <h2 class="text-center">Commit History For The Project</h2>
+  <h3 class="text-center">Meta Commit History</h3>
+  <div class="container card-list">
+    <div *ngFor="let commit of allCommits" class="card">
+      <div class="card-header">
+        Author - {{commit.commit.author.name}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Commit Message...</h5>
+        <p class="card-text">"{{commit.commit.message}}"</p>
+        <a [routerLink]="['/details/']" class="btn btn-primary">Details</a>
+      </div>
     </div>
   </div>
 </div>

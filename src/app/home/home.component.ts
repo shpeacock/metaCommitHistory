@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   getCommits() {
     this._api.getCommits().then(output => {
       this.allCommits = output;
+      console.log(output);
     });
   }
 
