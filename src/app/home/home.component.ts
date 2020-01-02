@@ -6,6 +6,7 @@ import { GithubService } from '../github.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  allCommits;
 
   constructor(private _api: GithubService) { }
 
@@ -14,10 +15,9 @@ export class HomeComponent implements OnInit {
   }
 
   getCommits() {
-    console.log('inside get commits');
-    this._api.getCommits();
-    // .then(output => { console.log(output) })
-    // .catch(error => { console.log(error) })
+    this._api.getCommits().then(output => {
+      this.allCommits = output;
+    });
   }
 
 }
