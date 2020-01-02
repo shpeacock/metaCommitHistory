@@ -7,7 +7,7 @@ import { GithubService } from '../github.service';
 })
 export class HomeComponent implements OnInit {
   allCommits;
-
+  imgSrc: string;
   constructor(private _api: GithubService) { }
 
   ngOnInit() {
@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
       this.allCommits = output;
       console.log(output);
     });
+  }
+
+  getSrc(url) {
+    return url;
   }
 
 }
